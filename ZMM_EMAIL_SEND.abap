@@ -1,4 +1,4 @@
-REPORT zmm_email_sent_01.
+REPORT zmm_email_send_01.
 
 DATA: lt_recepeints TYPE TABLE OF somlreci1,
       ls_recepeints TYPE somlreci1,
@@ -13,10 +13,10 @@ LOOP AT lt_users INTO DATA(ls_users).
   APPEND ls_bodydata TO lt_bodydata.
 ENDLOOP.
 
-ls_docdata-obj_name   = 'Email'.
-*ls_docdata-obj_descr  = 'Email from' && sy-sysid.
-*ls_docdata-sensitivty = 'O'.
-*ls_docdata-obj_langu  = sy-langu.
+*ls_docdata-obj_name   = 'Email'. "not mandatory "not mandatory
+*ls_docdata-obj_descr  = 'Email from' && sy-sysid. "subject "not mandatory
+*ls_docdata-sensitivty = 'O'. "not mandatory
+*ls_docdata-obj_langu  = sy-langu. "not mandatory
 
 ls_recepeints-receiver = 'x.x@domain.com'.
 ls_recepeints-rec_type = 'U'.
